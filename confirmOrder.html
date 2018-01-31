@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<link rel="shortcut icon" type="image/x-icon" href="img/bookStore_logo2.ico" media="screen" /><!--浏览器小图标-->
+		<link rel="Bookmark" href="img/bookStore_logo2.ico"/><!--收藏夹显示图标-->
+		<link rel="stylesheet" href="css/performance.css" />
+		<script type="text/javascript" src="js/bookCategory.js" ></script>
+		<script type="text/javascript" src="js/shengshi.js"></script>
+		<meta charset="UTF-8">
+		<title>确认订单信息</title>
+	</head>
+    <body>
+    	<div id="header">
+    	</div>
+    	<div id="container">
+    		<div id="container_height" style="width: 1200px;">
+    			<div class="flowsteps">
+	   				<ol class="num3">
+	   					<li class="done">
+	    						<span class="first">1.我的购物车</span>
+    					</li>
+	   					<li class="current">
+	   						<span>2.确认订单信息</span>
+	   					</li>
+	   					<li class="next">
+	    					<span class="last">3.成功提交订单</span>
+	    				</li>
+	    			</ol>
+	    		</div>
+	    		<div class="checkout-t">请确认以下信息，然后提交订单</div>
+	    		<div class="checkout-table">
+	    			<form id="orderForm" class="form" action="/checkout.jsp" method="post">
+	    				<div id="address" class="orderDiv">
+		    					<h3>确认收货地址</h3>
+		    				<div class="field-msg">
+		    					<div class="field">
+		    						<div class="hd">
+		    							<span class="required">*</span>
+		    							<label class="label">省市区：</label>
+		    						</div>
+		    						<div class="bd">
+		    							<div id="area">
+			    							<select id="sheng"></select>
+											<select id="shi"></select>
+											<select id="qu"></select>
+										</div>
+										<label>邮政编码：</label>
+										<input id="zipcode" class="text text-default" name="zipcode" maxlength="10" size="18" type="text"/>
+		    						</div>
+		    					</div>
+		    					<div class="field">
+		    						<div class="hd">
+		    							<span class="required">*</span>
+		    							<label class="label">街道地址：</label>
+		    						</div>
+		    						<div class="bd">
+		    							<textarea name="deliverAddress" id="deliverAddress" maxlength="120" cols="110" rows="2" class="text text-default"></textarea>
+		    						</div>
+		    					</div>
+		    					<div class="field">
+		    						<div class="hd">
+		    							<span class="required">*</span>
+		    							<label class="label">收货人姓名：</label>
+		    						</div>
+		    						<div class="bd">
+		    							<input id="deliverName" name="deliverName" maxlength="30" size="20" class="text text-default" type="text">
+		    						</div>
+		    					</div>
+		    					<div class="field">
+		    						<div class="hd">
+		    							<span class="required">*</span>
+		    							<label class="label">电话：</label>
+		    						</div>
+		    						<div class="bd">
+		    							<input id="deliverPhone" name="deliverPhone" maxlength="30" size="20" class="text text-default" type="text">
+		    							<span class="tips">手机和电话请至少填写一个,电话的格式：区号-电话号码-分机</span>
+		    						</div>
+		    					</div>
+		    					<div class="field">
+		    						<div class="hd">
+		    							<span class="required">*</span>
+		    							<label class="label">手机：</label>
+		    						</div>
+		    						<div class="bd">
+		    							<input id="deliverMobile" name="deliverMobile" maxlength="30" size="20" class="text text-default" type="text">
+		    							<span class="tips">手机号大陆地区请填写11位，台湾地区10位，港澳地区8位</span>
+		    						</div>
+		    					</div>
+		    				</div>
+	    				</div>
+	    				<div id="pay" class="orderDiv">
+	    					<h3><span>确认支付方式</span></h3>
+	    					<ul id="pay_list">
+	    						<li>
+							        <input type="radio" name="paytype" id="paytype1" value="1" checked="checked">
+							        <label hidefocus="true" for="paytype1">在线支付</label>   
+							        <span class="tip">支持支付宝、中国银联、各大银行借记卡网银</span>
+							        </li>
+								<li>
+							        <input type="radio" name="paytype" id="paytype2" value="2">
+							        <label hidefocus="true" for="paytype2">银行汇款</label>   
+							        <span class="tip">通过各大银行直接汇款，确认时间较长，不推荐</span>
+								</li>           
+	    					</ul>
+	    				</div>
+	    				<div id="deilver" class="orderDiv">
+	    					<h3><span>确认发货方式</span></h3>
+	    					<ul id="deliver_list">
+	    						<li>
+							        <input type="radio" name="delivertype" id="delivertype" value="3" checked="checked">
+							        <label hidefocus="true" for="delivertype">普通快递</label>   
+							        <span class="tip">运费8元/单</span>
+								</li>
+	    					</ul>
+	    				</div>
+	    				<div id="cart" class="orderDiv">
+	    					<h3><span>确认选购的图书</span></h3>
+	    					<div class="cart-table">
+	    						<table class="order_table" cellpadding="0" cellspacing="0">
+	    							<colgroup valign="middle">
+	    								<col />
+	    								<col width="110" />
+	    								<col width="70" />
+	    								<col width="70" />
+	    								<col width="110" />
+	    								<col width="110" />
+	    							</colgroup>
+	    							<thead>
+	    								<tr>
+	    									<th class="s-title">图书名称</th>
+	    									<th class="s-price">单价(元)</th>
+	    									<th class="s-point">折扣</th>
+	    									<th class="s-amount">数量</th>
+	    									<th class="s-agio">节省(元)</th>
+	    									<th class="s-total">小计(元)</th>
+	    								</tr>
+	    							</thead>
+	    							<tbody id="carttable">
+	    								<tr>
+	    									<td class="s-title">
+	    										<a class="cart-img" target="_blank" href="">
+	    											<img class="s-img" src="img/1001.jpg"/>
+	    										</a>
+	    										<a class="cart-title" target="_blank" href="">bname</a>
+	    										<div class="props">
+	    											<span>品类：正价</span>
+	    										</div>
+	    									</td>
+	    									<td class="s-price">
+	    										<span>20.00</span>
+	    									</td>
+	    									<td class="s-point">
+	    										<span>65折</span>
+	    									</td>
+	    									<td class="s-amount">1</td>
+	    									<td class="s-agio"><span>10.00</span></td>
+	    									<td class="s-total"><span>10.00</span></td>
+	    								</tr>
+	    							</tbody>
+	    						</table>
+	    					</div>
+	    				</div>
+	    				<!--总计-->
+	    				<div id="summaryDiv">
+	    					<div class="summaryDiv">
+	    						<div>
+		    						<div class="border">
+		    							<p>
+		    								<span class="bname">商品金额：</span>
+		    								<span class="bprice">10.00</span>
+		    							</p>
+		    							<p>
+		    								<span class="bname">运费：</span>
+		    								<span class="bprice">8.00</span>
+		    							</p>
+		    						</div>
+		    					</div>
+		    					<p class="total_price">
+		    						<span class="bname">应付金额：</span>
+		    						<span class="bprice red">18.00</span>
+		    					</p>
+	    					</div>
+	    				</div>
+	    				<div id="submitDiv">
+	    					<div class="submitDiv">
+	    						<div class="submitBox">
+	    							共<span class="red">1</span>件商品
+	    							<span class="shouldPay">
+	    							应付金额：<span class="red">18.00</span>
+	    							</span>
+	    							(含运费
+	    							<span class="red">8.00</span>
+	    							元)
+	    							<input type="submit" value="提交订单" id="submitBtn" class="btn"/>
+	    						</div>
+	    					</div>
+	    				</div>
+	    			</form>
+	    		</div>
+    		</div>
+    	</div>
+    	<script type="text/javascript">
+			var sheng = document.getElementById("sheng");
+			var shi = document.getElementById("shi");
+			var qu = document.getElementById("qu");
+			var area = document.getElementById("area");
+			area.appendChild(sheng);
+			area.appendChild(shi);
+			area.appendChild(qu);
+			sheng.options[0] = new Option("请输入省");
+			shi.options[0] = new Option("请输入市");
+			qu.options[0] = new Option("请输入区");
+
+			// 循环第一步,把省循环进select
+			for(var i = 0; i < city.length; i++) {
+				sheng.options[sheng.length] = new Option(city[i].name);
+				// 循环第二步,把所有的市都循环进select
+				sheng.onchange = function() {
+					shi.options.length = 0;
+					shi.options[shi.length] = new Option("请输入市");
+					for(var j = 0; j < city[sheng.selectedIndex - 1].city.length; j++) {
+						shi.options[shi.length] = new Option(city[sheng.selectedIndex - 1].city[j].name)
+					}
+
+				}
+				shi.onchange = function() {
+					qu.options.length = 0;
+					qu.options[qu.length] = new Option("请输入区");
+					for(var k = 0; k < city[sheng.selectedIndex - 1].city[shi.selectedIndex - 1].area.length; k++) {
+						qu.options[qu.length] = new Option(city[sheng.selectedIndex - 1].city[shi.selectedIndex - 1].area[k]);
+					};
+				}
+			};
+		</script>
+    	<div id="footer">
+			<hr />
+			<div>
+				Copyright 2016-2017 @haleyysz
+			</div>
+		</div>
+ 	</body>
+</html>

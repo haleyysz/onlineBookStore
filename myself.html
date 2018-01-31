@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="shortcut icon" type="image/x-icon" href="img/bookStore_logo2.ico" media="screen" /><!--浏览器小图标-->
+		<link rel="Bookmark" href="img/bookStore_logo2.ico"/><!--收藏夹显示图标-->
+		<link rel="stylesheet" href="css/performance.css" />
+		<script type="text/javascript" src="js/bookCategory.js" ></script>
+		<meta charset="UTF-8">
+		<title>个人中心</title>
+		<style type="text/css">
+		body{
+			background:url(img/bg.jpg);
+			background-size:100% 100%;
+			margin: 0;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<div id="top">
+				<div id="top1">
+					<p style="float: left; color: #5C5C60;">欢迎来到<strong><a href="homePage.html" target="_self">三味书屋</a></strong>，请</p>
+					<a href="login.html" title="登录" style="float: left;color: #C95A2A;"><p>【登录】</p></a>
+					<span style="float: left;">|</span>
+					<a href="register.html" title="注册" style="float: left;color: #1D66B2;"><p>【注册】</p></a>
+				</div>
+				<div id="top2">
+					<a href="homePage.html" target="_self" title="首页">首页&ensp;|</a>
+					<a href="cart.html" target="_self" title="购物车">购物车&ensp;|</a>
+					<a href="orders.html" target="_self" title="我的订单">我的订单&ensp;|</a>
+					<a href="myself.html" target="_self" title="个人中心">个人中心</a>
+				</div>
+			</div>
+		</div>
+		<hr />
+		
+		<div id="container">
+			<div class="box">
+			<form method="post">
+				<table width="100%" border="0">
+					<tbody class="body">
+						<tr>
+							<td class="left" width="36%">用户名:</td>
+							<td class="right" >
+								<div class="username">
+									<input id="username2" class="input" placeholder="请输入用户名" type="text" required="required"/>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="left">原密码:</td>
+							<td class="right">
+								<div class="password">
+									<input id="password2" class="input" placeholder="请输入原密码" maxlength="16" type="password" required="required"/>
+								</div>
+							</td>
+						</tr>
+						<br />
+						<tr>
+							<td class="left">设置密码:</td>
+							<td class="right">
+								<div class="confirmPassword">
+									<input id="password_confirm1" class="input" placeholder="请输入更改后的密码" maxlength="16" type="password" required="required"/>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="left">确认密码:</td>
+							<td class="right">
+								<div class="confirmPassword">
+									<input id="password_confirm2" onkeyup="validate()" class="input" placeholder="请再次输入更改后的密码" maxlength="16" type="password" required="required"/>
+									<span id="tishi2"></span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="left">邮箱:</td>
+							<td class="right">
+								<div class="mail">
+									<input id="mail" class="input" placeholder="请输入邮箱地址" type="text" required="required"/>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="left">手机:</td>
+							<td class="right">
+								<div class="phone">
+									<input id="phone" class="input" placeholder="请输入手机号" type="text" required="required"/>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="left"></td>
+							<td class="right">
+								<input type="submit" value="保存" class="btn" id="keep" />
+								<!--<button class="btn" type="submit">保存</button>-->
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</form>
+						<script>
+							function validate(){
+								var pw1 = document.getElementById("password_confirm1").value;
+								var pw2 = document.getElementById("password_confirm2").value;
+								if(pw1==pw2){
+									document.getElementById("tishi2").innerHTML="<font color='green'>两次密码相同</font>";
+									document.getElementById("keep").disabled=false;
+								}else{
+									document.getElementById("tishi2").innerHTML="<font color='red'>两次密码不相同</font>";
+									document.getElementById("keep").disabled=true;
+								}
+							}
+						</script>
+			</div>
+		</div>
+		<div id="footer">
+			<hr />
+			<div>
+			Copyright 2016-2017 @haleyysz
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="shortcut icon" type="image/x-icon" href="img/bookStore_logo2.ico" media="screen" /><!--浏览器小图标-->
+		<link rel="Bookmark" href="img/bookStore_logo2.ico"/><!--收藏夹显示图标-->
+		<link rel="stylesheet" href="css/performance.css" />
+		<script type="text/javascript" src="js/bookCategory.js" ></script>
+		<meta charset="UTF-8">
+		<title>三味书屋</title>
+	</head>
+	<body>
+		<div id="header">
+			<div id="top">
+				<div id="top1">
+					<p style="float: left; color: #5C5C60;">欢迎来到<strong><a href="homePage.html" target="_self">三味书屋</a></strong>，请</p>
+					<a href="login.html" title="登录" style="float: left;color: #C95A2A;"><p>【登录】</p></a>
+					<span style="float: left;">|</span>
+					<a href="register.html" title="注册" style="float: left;color: #1D66B2;"><p>【注册】</p></a>
+				</div>
+				<div id="top2">
+					<a href="homePage.html" target="_self" title="首页">首页&ensp;|</a>
+					<a href="cart.html" target="_self" title="购物车">购物车&ensp;|</a>
+					<a href="orders.html" target="_self" title="我的订单">我的订单&ensp;|</a>
+					<a href="myself.html" target="_self" title="个人中心">个人中心</a>
+				</div>
+			</div>
+		</div>
+		<hr />
+		<div id="container">
+			<iframe  id="iframe1" scrolling="no" src="index1.html" width="1200px" height="200px" align="top"></iframe>
+			<br />
+			<br />
+			<!--搜索框-->
+			<div class="search">
+			<form id="searchBox" action="search.html" method="get" name="s">
+				<div>
+				<input id="search" class="input" placeholder="搜索图书名" style="color: #000000;"/>
+				<button id="searchButton">搜索</button>
+				</div>
+			</form>
+			</div>
+			<!--图书列表-->
+			<div id="menu">
+				<ul>
+					<li class="li1" onmouseover="show(0)">
+						<h3>人文社科</h3>
+						<div class="submenu" onmouseout="hide(0)">
+							<ul>
+								<li><a href="0001.html" target="_blank">国学</a></li>
+								<li><a href="#" target="_blank">哲学</a></li>
+								<li><a href="#" target="_blank">宗教</a></li>
+								<li><a href="#" target="_blank">社会科学</a></li>
+								<li><a href="#" target="_blank">政治</a></li>
+								<li><a href="#" target="_blank">军事</a></li>
+								<li><a href="#" target="_blank">文化</a></li>
+								<li><a href="#" target="_blank">历史</a></li>
+								<li><a href="#" target="_blank">地理</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li1" onmouseover="show(1)">
+						<h3>文学艺术</h3>
+						<div class="submenu" onmouseout="hide(1)">
+							<ul>
+								<li><a href="#" target="_blank">文学</a></li>
+								<li><a href="#" target="_blank">小说</a></li>
+								<li><a href="#" target="_blank">传记</a></li>
+								<li><a href="#" target="_blank">青春文学</a></li>
+								<li><a href="#" target="_blank">艺术</a></li>
+								<li><a href="#" target="_blank">动漫</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li1" onmouseover="show(2)">
+						<h3>经管法律</h3>
+						<div class="submenu" onmouseout="hide(2)">
+							<ul>
+								<li><a href="#" target="_blank">经济</a></li>
+								<li><a href="#" target="_blank">管理</a></li>
+								<li><a href="#" target="_blank">法律</a></li>
+								<li><a href="#" target="_blank">励志</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li1" onmouseover="show(3)" style="background: #F2753F">
+						<h3>少儿图书</h3>
+						<div class="submenu" onmouseout="hide(3)">
+							<ul>
+								<li><a href="#" target="_blank">亲子读物</a></li>
+								<li><a href="#" target="_blank">少儿文学</a></li>
+								<li><a href="#" target="_blank">少儿百科</a></li>
+								<li><a href="#" target="_blank">才堂艺术</a></li>
+								<li><a href="#" target="_blank">励志成长</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li1" onmouseover="show(4)" style="background: #F2753F">
+						<h3>科学技术</h3>
+						<div class="submenu" onmouseout="hide(4)">
+							<ul>
+								<li><a href="#" target="_blank">医学</a></li>
+								<li><a href="#" target="_blank">自然科学</a></li>
+								<li><a href="#" target="_blank">工业技术</a></li>
+								<li><a href="#" target="_blank">科普读物</a></li>
+								<li><a href="#" target="_blank">农业科学</a></li>
+								<li><a href="#" target="_blank">交通运输</a></li>
+								<li><a href="#" target="_blank">科学环境</a></li>
+								<li><a href="#" target="_blank">航空航天</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li1" onmouseover="show(5)" style="background: #F2753F">
+						<h3>电脑网络</h3>
+						<div class="submenu" onmouseout="hide(5)">
+							<ul>
+								<li><a href="#" target="_blank">计算机</a></li>
+								<li><a href="#" target="_blank">多媒体</a></li>
+								<li><a href="#" target="_blank">数据库</a></li>
+								<li><a href="#" target="_blank">操作系统</a></li>
+								<li><a href="#" target="_blank">程序设计</a></li>
+								<li><a href="#" target="_blank">数据通讯</a></li>
+								<li><a href="#" target="_blank">电子商务</a></li>
+								<li><a href="#" target="_blank">游戏设计</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li1" onmouseover="show(6)" style="background: #f29f3f">
+						<h3>生活时尚</h3>
+						<div class="submenu" onmouseout="hide(6)">
+							<ul>
+								<li><a href="#" target="_blank">家居</a></li>
+								<li><a href="#" target="_blank">美食</a></li>
+								<li><a href="#" target="_blank">旅游</a></li>
+								<li><a href="#" target="_blank">健康</a></li>
+								<li><a href="#" target="_blank">体育</a></li>
+								<li><a href="#" target="_blank">娱乐时尚</a></li>
+								<li><a href="#" target="_blank">婚恋/性</a></li>
+								<li><a href="#" target="_blank">育儿成长</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li1" onmouseover="show(7)" style="background: #f29f3f">
+						<h3>教育教材</h3>
+						<div class="submenu" onmouseout="hide(7)">
+							<ul>
+								<li><a href="#" target="_blank">教育</a></li>
+								<li><a href="#" target="_blank">教材</a></li>
+								<li><a href="#" target="_blank">教辅</a></li>
+								<li><a href="#" target="_blank">考试</a></li>
+								<li><a href="#" target="_blank">外语</a></li>
+								<li><a href="#" target="_blank">工具书</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="li1" onmouseover="show(8)" style="background: #f29f3f">
+						<h3>艺术与摄影</h3>
+						<div class="submenu" onmouseout="hide(8)">
+							<ul>
+								<li><a href="#" target="_blank">摄影</a></li>
+								<li><a href="#" target="_blank">绘画</a></li>
+								<li><a href="#" target="_blank">涂鸦</a></li>
+								<li><a href="#" target="_blank">书法字帖</a></li>
+								<li><a href="#" target="_blank">鉴赏收藏</a></li>
+								<li><a href="#" target="_blank">建筑艺术</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="footer">
+			<hr />
+			<div>
+				Copyright 2016-2017 @haleyysz
+			</div>
+		</div>
+	</body>
+</html>
